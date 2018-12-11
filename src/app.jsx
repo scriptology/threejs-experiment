@@ -1,14 +1,12 @@
 import React from 'react';
 import { hot } from 'react-hot-loader';
+import Project from './components/project/';
 
 class App extends React.PureComponent {
   render() {
     return (
       <div className="3d-widget">
-        <div><span>test</span></div>
-          <canvas
-            id="3d-widget-canvas"
-          />
+        <Project />
       </div>
     );
   }
