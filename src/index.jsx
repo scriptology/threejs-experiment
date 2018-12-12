@@ -92,6 +92,83 @@ const renderBuilder = (selectorName) => {
               castShadow: true,
             },
           },
+          {
+            name: 'cubeTextures',
+            geometry: {
+              name: 'BoxGeometry',
+              props: {
+                width: 60,
+                height: 60,
+                depth: 60,
+              },
+            },
+            material: {
+              name: 'MeshFaceMaterial',
+              props: {
+                materials: [
+                  {
+                    name: 'MeshPhongMaterial',
+                    configuration: {
+                      texture: '/textures/wooden-floor/woodfloor_diffuse.jpg',
+                      textureBump: '/textures/wooden-floor/woodfloor_diffuse.jpg',
+                      textureNormal: '/textures/wooden-floor/woodfloor_diffuse.jpg',
+                      side: 'DoubleSide',
+                    },
+                  },
+                  {
+                    name: 'MeshPhongMaterial',
+                    configuration: {
+                      texture: '/textures/wooden-floor/woodfloor_diffuse.jpg',
+                      textureBump: '/textures/wooden-floor/woodfloor_diffuse.jpg',
+                      textureNormal: '/textures/wooden-floor/woodfloor_diffuse.jpg',
+                      side: 'DoubleSide',
+                    },
+                  },
+                  {
+                    name: 'MeshPhongMaterial',
+                    configuration: {
+                      texture: '/textures/wooden-floor/woodfloor_diffuse.jpg',
+                      textureBump: '/textures/wooden-floor/woodfloor_diffuse.jpg',
+                      textureNormal: '/textures/wooden-floor/woodfloor_diffuse.jpg',
+                      side: 'DoubleSide',
+                    },
+                  },
+                  {
+                    name: 'MeshPhongMaterial',
+                    configuration: {
+                      texture: '/textures/wooden-floor/woodfloor_diffuse.jpg',
+                      textureBump: '/textures/wooden-floor/woodfloor_diffuse.jpg',
+                      textureNormal: '/textures/wooden-floor/woodfloor_diffuse.jpg',
+                      side: 'DoubleSide',
+                    },
+                  },
+                  {
+                    name: 'MeshPhongMaterial',
+                    configuration: {
+                      texture: '/textures/wooden-floor/woodfloor_diffuse.jpg',
+                      textureBump: '/textures/wooden-floor/woodfloor_diffuse.jpg',
+                      textureNormal: '/textures/wooden-floor/woodfloor_diffuse.jpg',
+                      side: 'DoubleSide',
+                    },
+                  },
+                  {
+                    name: 'MeshPhongMaterial',
+                    configuration: {
+                      texture: '/textures/wooden-floor/woodfloor_diffuse.jpg',
+                      textureBump: '/textures/wooden-floor/woodfloor_diffuse.jpg',
+                      textureNormal: '/textures/wooden-floor/woodfloor_diffuse.jpg',
+                      side: 'DoubleSide',
+                    },
+                  },
+                ],
+              },
+            },
+            configuration: {
+              position: { x: -150, y: 30, z: 0 },
+              receiveShadow: true,
+              castShadow: true,
+            },
+          },
         ],
         lights: [
           {

@@ -2,6 +2,7 @@ const webpack = require('webpack');
 const path = require('path');
 const loaders = require('./webpack.loaders');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackIncludeAssetsPlugin = require('html-webpack-include-assets-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
@@ -42,6 +43,9 @@ module.exports = {
       title: 'Output Management',
       template: './src/template.html'
     }),
+    new CopyWebpackPlugin([
+      { from:'src/textures', to:'textures' }
+    ]),
     new HtmlWebpackIncludeAssetsPlugin({
       assets: [],
       append: false,

@@ -36,7 +36,22 @@ class Project extends React.Component {
     project.meshes.forEach((mesh) => {
       const geometry = new THREE[mesh.geometry.name](...Object.values(mesh.geometry.props));
 
-      const material = new THREE[mesh.material.name](...Object.values(mesh.material.props));
+      let material;
+      if (mesh.material.props.materials) {
+        const props = mesh.material.props.materials.map((materialTexture) => {
+          const resultMaterial = new THREE[materialTexture.name]({
+            map: new THREE.TextureLoader().load(materialTexture.configuration.texture),
+            bumpMap: new THREE.TextureLoader().load(materialTexture.configuration.textureBump),
+            normalMap: new THREE.TextureLoader().load(materialTexture.configuration.textureNormal),
+            side: THREE[materialTexture.configuration.side],
+          });
+          return resultMaterial;
+        });
+        material = new THREE[mesh.material.name](props);
+      } else {
+        material = new THREE[mesh.material.name](...Object.values(mesh.material.props));
+      }
+
       const result = new THREE.Mesh(geometry, material);
       if (mesh.configuration) {
         if (mesh.configuration.rotation) {
