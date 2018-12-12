@@ -5,20 +5,41 @@ import * as THREE from 'three';
 const renderProject = (projectId) => {
   const wrapper = document.getElementById(projectId);
   const scene = new THREE.Scene();
-  const camera = new THREE.PerspectiveCamera(70, window.innerWidth / window.innerHeight, 1, 1000);
-  camera.position.z = 400;
+  const camera = new THREE.PerspectiveCamera(
+    100,
+    window.innerWidth / window.innerHeight,
+    100,
+    1000,
+  );
+  // .set(x, y, z)
+  camera.position.set(
+    0,
+    -500,
+    150,
+  );
+  camera.lookAt(scene.position);
+  // camera.rotation.x = (90 * Math.PI) / 180;
+  // const controls = new THREE.OrbitControls(camera);
+  // camera.position.set(0, 200, 500);
+  // controls.update();
+
   const renderer = new THREE.WebGLRenderer();
   renderer.setPixelRatio(window.devicePixelRatio);
   renderer.setSize(window.innerWidth, window.innerHeight);
   wrapper.appendChild(renderer.domElement);
 
+  const planeGeometry = new THREE.PlaneGeometry(500, 500);
+  const planeMaterial = new THREE.MeshBasicMaterial({ color: 0xffffff, side: THREE.DoubleSide });
+  const plane = new THREE.Mesh(planeGeometry, planeMaterial);
+  plane.position.set(0, 0, -150);
+  scene.add(plane);
   // const geometry = new THREE.BoxBufferGeometry(1, 1, 1);
-  const geometry = new THREE.BoxBufferGeometry(200, 200, 200);
+  const geometry = new THREE.BoxBufferGeometry(100, 100, 100);
   const material = new THREE.MeshBasicMaterial({
-    ambient: 0x555555,
-    color: 0x555555,
+    ambient: 0x1770d4,
+    color: 0xd41762,
     specular: 0xffffff,
-    shininess: 50,
+    shininess: 200,
     shading: THREE.SmoothShading,
   });
   // const material = new THREE.MeshPhongMaterial({
