@@ -25,7 +25,6 @@
   },
   "homepage": "https://github.com/scriptology/threejs-experiment#readme",
   "devDependencies": {
-    "prop-types": "15.6.2",
     "react-beautiful-dnd": "10.0.0",
     "react-jsonschema-form": "1.0.5",
     "react-router-dom": "4.3.1",
@@ -60,6 +59,7 @@
     "webpack-dev-server": "3.1.9"
   },
   "dependencies": {
+    "prop-types": "15.6.2",
     "orbit-controls-es6": "^2.0.0",
     "react": "16.5.2",
     "react-dom": "16.5.2",
